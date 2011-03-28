@@ -46,15 +46,42 @@ class ChargifyTest < Test::Unit::TestCase
     end
     
     should "update a customer" do
-      stub_put "https://OU812:x@pengwynn.chargify.com/customers/16.json", "new_customer.json"
-      info = {
+      stub_put "https://OU812:x@pengwynn.chargify.com/customers/16.json", "customer.json"
+      options = {
         :id           => 16,
-        :first_name   => "Wynn",
-        :last_name    => "Netherland",
-        :email        => "wynn@example.com"
+        :organization => "Squeejee",
+        :first_name   => "Bradley",
+        :last_name    => "Joyce",
+        :email        => "bradley@squeejee.com"
       }
-      customer = @client.update_customer(info)
-      customer.first_name.should == "Wynn"
+      customer = @client.update_customer(options)
+      customer.first_name.should == 'Bradley'
+    end
+
+    should "set success? to true when customer is updated successfully" do
+      stub_put "https://OU812:x@pengwynn.chargify.com/customers/16.json", "customer.json", 200
+      options = {
+        :id           => 16,
+        :organization => "Squeejee",
+        :first_name   => "Bradley",
+        :last_name    => "Joyce",
+        :email        => "bradley@squeejee.com"
+      }
+      customer = @client.update_customer(options)
+      customer.success?.should == true
+    end
+    
+    should "set success? to false when customer is not updated successfully" do
+      stub_put "https://OU812:x@pengwynn.chargify.com/customers/16.json", "customer.json", 500
+      options = {
+        :id           => 16,
+        :organization => "Squeejee",
+        :first_name   => "Bradley",
+        :last_name    => "Joyce",
+        :email        => "bradley@squeejee.com"
+      }
+      customer = @client.update_customer(options)
+      customer.success?.should == nil
     end
     
     # Depends on Chargify:

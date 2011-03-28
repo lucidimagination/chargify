@@ -66,19 +66,15 @@ module Chargify
       response
     end
     
-    #
-    # * first_name (Required)
-    # * last_name (Required)
-    # * email (Required)
-    # * organization (Optional) Company/Organization name
-    # * reference (Optional, but encouraged) The unique identifier used within your own application for this customer
-    # 
-    def update_customer(info={})
-      info.stringify_keys!
-      chargify_id = info.delete('id')
-      response = Hashie::Mash.new(put("/customers/#{chargify_id}.json", :body => {:customer => info}))
-      return response.customer unless response.customer.to_a.empty?
-      response
+    # Returns all elements outputted by Chargify plus:
+    # response.success? -> true if response code is 200, false otherwise
+    def update_customer(customer_attributes = {})
+      customer_attributes.stringify_keys!
+      customer_id = customer_attributes.delete('id')
+      raw_response = put("/customers/#{customer_id}.json", :body => {:customer_id => customer_attributes})
+      updated = true if raw_response.code == 200
+      response = Hashie::Mash.new(raw_response)
+      (response.customer || response).update(:success? => updated)
     end
     
     def customer_subscriptions(chargify_id)
