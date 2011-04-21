@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "changelog.md",
-     "chargify.gemspec",
+     "lucidimagination-chargify.gemspec",
      "lib/chargify.rb",
      "lib/chargify/client.rb",
      "test/fixtures/customer.json",

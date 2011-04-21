@@ -3,7 +3,7 @@ require 'active_support/inflector'
 require 'shoulda/tasks'
 
 
-MG.new("chargify.gemspec")
+MG.new("lucidimagination-chargify.gemspec")
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
