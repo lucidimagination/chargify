@@ -1,0 +1,53 @@
+[
+    {
+        "statement": {
+            "customer_shipping_address_2": null, 
+            "text_view": "fake text view", 
+            "customer_organization": null, 
+            "updated_at": "2011-04-17T23:30:50-04:00", 
+            "customer_billing_zip": null, 
+            "basic_html_view": "<html>fake basic html view</html>", 
+            "closed_at": "2011-04-17T23:30:50-04:00", 
+            "customer_shipping_country": null, 
+            "id": 1000, 
+            "customer_billing_city": null, 
+            "customer_billing_address": null, 
+            "future_payments": [], 
+            "opened_at": "2011-04-17T23:30:49-04:00", 
+            "subscription_id": 100, 
+            "events": [
+                {
+                    "event": {
+                        "message": "Successful signup for Denis Goeury's subscription to Small", 
+                        "id": 200, 
+                        "key": "signup_success"
+                    }
+                }
+            ], 
+            "settled_at": "2011-04-17T23:30:50-04:00", 
+            "customer_shipping_address": null, 
+            "transactions": [
+                {
+                    "starting_balance_in_cents": 0, 
+                    "ending_balance_in_cents": 0, 
+                    "created_at": "2011-04-17T23:30:49-04:00", 
+                    "updated_at": "2011-04-17T23:30:50-04:00", 
+                    "subscription_id": 100, 
+                    "id": 10000
+                }
+            ], 
+            "customer_billing_address_2": null, 
+            "customer_billing_state": null, 
+            "customer_shipping_state": null, 
+            "customer_billing_country": null, 
+            "starting_balance_in_cents": 0, 
+            "ending_balance_in_cents": 0, 
+            "created_at": "2011-04-17T23:30:49-04:00", 
+            "html_view": "<html>fake html view</html>", 
+            "customer_shipping_city": null, 
+            "customer_first_name": "Greta", 
+            "customer_last_name": "Schlumm", 
+            "customer_shipping_zip": null
+        }
+    }
+]

@@ -170,6 +170,11 @@ module Chargify
       transactions.map{|t| Hashie::Mash.new t['transaction']}
     end
 
+    def list_statements(subscription_id)
+      statements = get("/subscriptions/#{subscription_id}/statements.json")
+      statements.map{|s| Hashie::Mash.new s['statement']}
+    end
+
     def list_components(subscription_id)
       components = get("/subscriptions/#{subscription_id}/components.json")
       components.map{|c| Hashie::Mash.new c['component']}

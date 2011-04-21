@@ -422,5 +422,11 @@ class ChargifyTest < Test::Unit::TestCase
       end
     end
     
+    should "return a list of statements" do
+      stub_get "https://OU812:x@pengwynn.chargify.com/subscriptions/123/statements.json", "statements.json"
+      statements = @client.list_statements 123
+      statements.size.should == 1
+      statements.first.customer_last_name.should == 'Schlumm'
+    end
   end
 end
