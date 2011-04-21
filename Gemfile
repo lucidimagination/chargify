@@ -1,0 +1,13 @@
+source 'http://rubygems.org'
+
+gem 'activesupport'
+gem 'fakeweb', '>= 1.2.5'
+gem 'hashie', '>= 0.1.3'
+gem 'httparty', '>= 0.5.2'
+gem 'i18n'
+gem 'jnunemaker-matchy', '0.4.0'
+gem 'json'
+gem 'mocha', '~> 0.9.8'
+gem 'mg'
+gem 'redgreen', '>= 1.2.2'
+gem 'shoulda', '>= 2.10.1'
